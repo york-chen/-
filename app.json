@@ -1,0 +1,65 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/zpxq/index",
+        "pages/qrcode/index",
+        "pages/hfxq/index",
+        "pages/jcsp/index",
+        "pages/shq/index",
+        "pages/fkxq/index",
+        "pages/yjfk/index",
+        "pages/grzx/index",
+        "pages/gycz/index",
+        "pages/wdfk/index",
+        "pages/live/index",
+        "pages/thirdservice/index",
+        "pages/newsDetail/index",
+        "pages/mapNavigation/index",
+        "pages/circle/index",
+        "pages/search/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#de2d2d",
+        "navigationBarTitleText": "成中有约",
+        "navigationBarTextStyle": "white",
+        "backgroundColor": "#eeeeee"
+    },
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "borderStyle": "white",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "",
+                "iconPath": "assets/icons/czyy1.png",
+                "selectedIconPath": "assets/icons/czyy2.png"
+            },
+            {
+                "pagePath": "pages/gycz/index",
+                "text": "",
+                "iconPath": "assets/icons/gycz1.png",
+                "selectedIconPath": "assets/icons/gycz2.png"
+            },
+            {
+                "pagePath": "pages/jcsp/index",
+                "text": "",
+                "iconPath": "assets/icons/jcsp1.png",
+                "selectedIconPath": "assets/icons/jcsp2.png"
+            },
+            {
+                "pagePath": "pages/shq/index",
+                "text": "",
+                "iconPath": "assets/icons/shq1.png",
+                "selectedIconPath": "assets/icons/shq2.png"
+            },
+            {
+                "pagePath": "pages/grzx/index",
+                "text": "",
+                "iconPath": "assets/icons/grzx1.png",
+                "selectedIconPath": "assets/icons/grzx2.png"
+            }
+        ]
+    }
+}

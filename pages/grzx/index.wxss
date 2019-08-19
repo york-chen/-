@@ -1,0 +1,33 @@
+page,
+.page,
+.page__bd {
+    height: 100%;
+    padding-bottom: 0;
+}
+
+page {
+    width: 750rpx;
+    height: 100%;
+    background-color: #eee;
+}
+
+.share {
+    background-color: #fff;
+    line-height: normal;
+    font-size: unset;
+    text-align: left;
+}
+
+.btn-primary {
+    color: #de2d2d;
+}
+
+._btn {
+    background-color: #fff;
+    line-height: 3.5;
+
+}
+.policy{
+    text-align: left;
+    font-size: 24rpx;
+}

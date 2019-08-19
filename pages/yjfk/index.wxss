@@ -1,0 +1,75 @@
+page,
+.page{
+    height: 100%;
+    padding-bottom: 0;
+}
+.page{
+    border-top: 1px transparent;
+    padding: 20rpx;
+    font-size: 26rpx;
+}
+page {
+    width: 750rpx;
+    background-color: #eee;
+}
+.page__hd{
+    font-size: 26rpx;
+}
+.btn-my{
+    position: fixed;
+    width: 60rpx;
+    height: 60rpx;
+    line-height: 30rpx;
+    padding: 10rpx;
+    border-radius: 50%;
+    right: 0;
+    top: 30%;
+    color: #fff;
+    background-color: #de2d2d;
+    z-index: 999;
+    font-size: 22rpx;
+    text-align: center;
+    cursor: pointer;
+
+}
+.cy-input{
+    border: 1px solid #ddd;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-radius: 10rpx;
+    padding-left: 30rpx;
+    font-size: 26rpx;
+    background-color: #fff;
+    margin-top: 30rpx;
+}
+.weui-cell{
+    background-color: #fff;
+    padding: 18rpx 32rpx;
+    margin-top: 15rpx;
+}
+.radio-group{
+    margin-top: 30rpx;
+}
+.cy-textarea{
+    background-color: #fff;
+    width: 678rpx;
+    margin-top: 30rpx;
+    padding: 16rpx;
+    border-radius: 10rpx;
+}
+.img-camera{
+    width: 150rpx;
+    height: 150rpx;
+    display: inline-block;
+}
+.camera-wrap{
+    margin-top: 30rpx;
+}
+.btn-area{
+    margin-top: 30rpx;
+    margin-bottom: 60rpx;
+}
+.btn-submit{
+    background-color: #de2d2d;
+    color: #fff;
+}

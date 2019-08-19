@@ -1,0 +1,13 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="job-name">{{recruitInfo.name}}</view>
+        <text class="salary">{{recruitInfo.money}}</text>
+        <view class="info">{{recruitInfo.desc}}</view>
+    </view>
+    <view class="page__bd">
+        <view class="title">职位详情</view>
+        <view class="detail">
+            {{recruitInfo.detail}}
+        </view>
+    </view>
+</view>

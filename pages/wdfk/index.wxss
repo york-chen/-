@@ -1,0 +1,28 @@
+page{
+    height: 100%;
+    background-color: #eee;
+}
+.page{
+    padding: 20rpx;
+}
+.item{
+    background-color: #fff;
+    border-radius: 10rpx;
+    padding: 10rpx;
+    margin-bottom: 15rpx;
+}
+.title{
+
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+    font-size: 24rpx;
+    color: #ccc;
+}
+.date{
+    flex: 4;
+}
+.status{
+    flex: 1;
+}

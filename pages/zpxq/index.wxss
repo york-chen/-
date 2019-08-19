@@ -1,0 +1,25 @@
+page{
+    background-color: #eee;
+    padding: 20rpx;
+}
+.page{
+    background-color: #fff;
+    width: 670rpx;
+    padding: 20rpx;
+}
+.job-name{
+    display: inline-block;
+}
+.salary{
+    color: #de2d2d;
+    font-size: 24rpx;
+    margin-left: 20rpx;
+}
+.info,.detail{
+    color: #afafaf;
+    margin-top: 15rpx;
+    font-size: 28rpx;
+}
+.title{
+    margin-top: 15rpx;
+}

@@ -1,0 +1,19 @@
+@import "weui.wxss";
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.tabs .tab {
+    font-size: 28rpx;
+    color: #ccc;
+    padding: 10rpx;
+}
+
+.tabs .tab.active {
+    color: #de2d2d;
+    border-bottom: 1px solid #de2d2d;
+}

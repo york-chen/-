@@ -1,0 +1,28 @@
+<view class="page">
+    <view class="page__hd"></view>
+    <view class="page__bd">
+        <view class="video-wrap">
+            <video class="cy-video"
+                   src="{{record.link}}"
+                   controls></video>
+        </view>
+        <view class="info">
+            <view class="title">{{record.title}}</view>
+            <view class="date">{{record.create_time}}</view>
+        </view>
+        <view class="section">
+            <view class="section-title">相关推介</view>
+            <view class="section-content">
+                <view bindtap="viewRecord" data-item="{{item}}" class="list-item" wx:for="{{recommend}}" wx:key="id">
+                    <view class="left">
+                        <image class="img-short1" src="{{item.link}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="right-title">{{item.title}}</view>
+                        <view class="date">{{record.create_time}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

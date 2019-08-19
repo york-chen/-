@@ -1,0 +1,79 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="tabs">
+            <view id="{{item.value}}" bindtap="tabClick" wx:for="{{tabs}}" wx:key="*this"
+                  class="tab {{activeTab ==item.value?'active':''}}">
+                {{item.text}}
+            </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="tabs-panel">
+            <view wx:if="{{activeTab==1}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'>
+                    <view class="p">
+                        四川成中控股集团股份有限公司（简称成中集团）创立于1992年，总部位于四川省宜宾市叙州区，经过20多年的发展，已成为集住宅产业化、康养地产、医疗投资与管理、酒店管理、物业服务等为一体的大型多元化综合性企业集团。
+                    </view>
+                    <view class="p"> 集团常年综合用工5500余名，总资产50多亿元，年创税收上亿元，先后荣获“全国文明单位”、“全国五一劳动奖状”、“全国守合同重信用企业”等荣誉。
+                        集团积极
+                    </view>
+                    <view class="p">
+                        集团积极回报社会，通过设立公益慈善基金，修建公路、捐资助学、抗震救灾、扶贫济困等形式，累计捐资超过4000万元，先后获得“中华慈善突出贡献”、“四川省社会扶贫工作杰出贡献企业”、“抗震救灾慈善捐赠重大贡献单位”、“慈善爱心捐赠重大贡献企业”、“慈善明星企业”等荣誉称号。
+                    </view>
+                    <view class="p">成中集团以“成中，忠诚到永远”的企业精神，致力于将成中集团缔造为一流的企业集团，为每一位客户提供优质的产品和服务！真诚欢迎各界人士与成中集团一同开创未来!</view>
+                </scroll-view>
+            </view>
+            <view wx:if="{{activeTab==2}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'
+                             bindscrolltolower='loadMoreAlbum'
+                             bindscrolltoupper='refreshAlbum'
+                             lower-threshold='0' upper-threshold='0' scroll-top="30">
+                    <view class='data-loading' hidden='{{albumPage.hideRefresh}}'>
+                        数据刷新中...
+                    </view>
+                    <view wx:for="{{albumList}}" wx:key="index" class="item">
+                        <view class="title">{{item.album_name}}</view>
+                        <view class="img-wrap">
+                            <image wx:if="{{index<3}}" data-imglist="{{item.images}}" data-current="{{images.link_url}}"
+                                   wx:for="{{item.images}}" wx:for-item="images" wx:key="link_url"
+                                   bindtap="priviewImg"
+                                   src="{{images.link_url}}"></image>
+                        </view>
+                    </view>
+                    <view class='data-loading' hidden='{{albumPage.hideLoadMore}}'>
+                        数据加载中...
+                    </view>
+                </scroll-view>
+            </view>
+            <view wx:if="{{activeTab==3}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'>
+                    <view wx:for="{{recruitList}}" data-item="{{item}}" wx:key="index" class="card"
+                          bindtap="jumpToZpxq">
+                        <view class="name">
+                            {{item.name}}
+                            <text>{{item.money}}</text>
+                        </view>
+                        <view class="condition">{{item.desc}}</view>
+                    </view>
+                </scroll-view>
+            </view>
+            <view wx:if="{{activeTab==4}}" class="tab-content">
+
+            </view>
+            <view wx:if="{{activeTab==5}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'>
+                    <view wx:for="{{contactList}}" wx:key="index" class="contactCard">
+                        <view class="left">
+                            <view>{{item.name}}</view>
+                            <view class="phoneNumber">{{item.mobile}}</view>
+                        </view>
+                        <view class="right">
+                            <image data-phone="{{item.mobile}}" bindtap="makePhoneCall"
+                                   src="../../assets/images/phone.png"></image>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</view>

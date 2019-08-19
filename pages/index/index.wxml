@@ -1,0 +1,73 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="searchbar">
+            <image class="logo" src="../../assets/images/logo.png"></image>
+            <input bindfocus="jumpToSearch" name="search" class="input"
+                   type="text"
+                   placeholder="请输入你想要的搜索内容"></input>
+            <view class="cloud">
+                <view>
+                    <image class="img-cloud"
+                           src="{{weather.icon}}"></image>
+                </view>
+                <view class="txt">
+                    <text>{{weather.condition}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="tabs">
+            <view id="{{item.value}}" bindtap="tabClick" wx:for="{{tabs}}" wx:key="value"
+                  class="tab {{activeTab ==item.value?'active':''}}">
+                {{item.name}}
+            </view>
+        </view>
+    </view><!--页头-->
+    <view class="page__bd">
+        <view class="tabs-panel">
+            <view wx:if="{{activeTab==item.value}}" class="tab-content" wx:for="{{tabs}}" wx:key="value">
+                <scroll-view style="height: {{scrollHeight+'px'}};" class='scroll-view-container' scroll-y='{{true}}'
+                             bindscrolltolower='scrollToLower'
+                             bindscrolltoupper='scrollToUpper'
+                             lower-threshold='0' upper-threshold='0' scroll-top="30">
+                    <view class='data-loading' hidden='{{refreshHidden}}'>
+                        数据刷新中...
+                    </view>
+                    <swiper class="cy-swiper" wx:if="{{item.banner.length}}" indicator-color="#ffffff"
+                            indicator-active-color="#de2d2d"
+                            indicator-dots="true"
+                            autoplay="true"
+                            circular="true">
+                        <swiper-item wx:key="cover" wx:for="{{item.banner}}" wx:for-item="banner">
+                            <image class="slide-image" src="{{banner.cover}}"/>
+                        </swiper-item>
+                    </swiper>
+                    <view class="news">
+                        <view bindtap="viewDetail" data-id="{{news.id}}" class="news-item" wx:for="{{item.list}}"
+                              wx:key="id" wx:for-item="news">
+                            <view class="content">
+                                <view class="title">{{news.title}}</view>
+                                <view class="img-row" wx:if="{{news.image.length>1}}">
+                                    <view class="img-wrap" wx:for="{{news.image}}" wx:for-item="newsImage"
+                                          wx:key="*this">
+                                        <image src="{{newsImage}}"></image>
+                                    </view>
+                                </view>
+                                <view class="extra-info">
+                                    <text wx:if="{{news.tag}}" class="tag">{{news.tag}}</text>
+                                    <text class="date">{{news.date}}</text>
+                                </view>
+                            </view>
+                            <view class="img-wrap" wx:if="{{news.image.length<=1}}">
+                                <image wx:for="{{news.image}}" wx:for-item="newsImage" wx:key="*this"
+                                       src="{{newsImage}}"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class='data-loading' hidden='{{loadMoreHidden}}'>
+                        数据加载中...
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view><!--主体-->
+</view>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "cy-dialog": "../../components/dialog/index"
+    },
+    "navigationBarTitleText": "个人中心"
+}

@@ -1,0 +1,76 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="searchbar">
+            <input bindinput="bindinput" name="search" confirm-type="search" bindconfirm="searchAction" class="input"
+                   type="text"
+                   placeholder="请输入你想要的搜索内容"></input>
+            <view class="btn-search" bindtap="searchAction">搜索</view>
+        </view>
+        <view class="tabs">
+            <view id="{{item.value}}" bindtap="tabClick" wx:for="{{tabs}}" wx:key="value"
+                  class="tab {{activeTab ==item.value?'active':''}}">
+                {{item.name}}
+            </view>
+        </view>
+    </view><!--页头-->
+    <view class="page__bd">
+        <view wx:if="{{activeTab==1}}" class="tab-content">
+            <scroll-view style="height: {{scrollHeight+'px'}};" class='scroll-view-container' scroll-y='{{true}}'
+                         bindscrolltolower='loadMoreNews'
+                         bindscrolltoupper='refreshNews'
+                         lower-threshold='0' upper-threshold='0' scroll-top="0">
+                <view class='data-loading' hidden='{{newsPage.hideRefresh}}'>
+                    数据刷新中...
+                </view>
+                <view class="news">
+                    <view bindtap="viewDetail" data-id="{{news.id}}" class="news-item" wx:for="{{newsData}}"
+                          wx:key="id" wx:for-item="news">
+                        <view class="content">
+                            <view class="title">{{news.title}}</view>
+                            <view class="img-row" wx:if="{{news.image.length>1}}">
+                                <view class="img-wrap" wx:for="{{news.image}}" wx:for-item="newsImage"
+                                      wx:key="*this">
+                                    <image src="{{newsImage}}"></image>
+                                </view>
+                            </view>
+                            <view class="extra-info">
+                                <text wx:if="{{news.tag}}" class="tag">{{news.tag}}</text>
+                                <text class="date">{{news.date}}</text>
+                            </view>
+                        </view>
+                        <view class="img-wrap" wx:if="{{news.image.length<=1}}">
+                            <image wx:for="{{news.image}}" wx:for-item="newsImage" wx:key="*this"
+                                   src="{{newsImage}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class='data-loading' hidden='{{newsPage.hideLoadMore}}'>
+                    数据加载中...
+                </view>
+            </scroll-view>
+        </view>
+        <view wx:if="{{activeTab==2}}" class="tab-content">
+            <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'
+                         bindscrolltolower='loadMoreRecord'
+                         bindscrolltoupper='refreshRecord'
+                         lower-threshold='0' upper-threshold='0' scroll-top="30">
+                <view class='data-loading' hidden='{{recordPage.hideRefresh}}'>
+                    数据刷新中...
+                </view>
+                <view bindtap="jumpToDetail" class="list-item" data-item="{{item}}" wx:for="{{recordData.list}}"
+                      wx:key="id">
+                    <view class="left">
+                        <image class="img-short1" src="{{item.cover}}"></image>
+                    </view>
+                    <view class="right">
+                        <view class="right-title">{{item.title}}</view>
+                        <view class="date">{{item.create_time}}</view>
+                    </view>
+                </view>
+                <view class='data-loading' hidden='{{recordPage.hideLoadMore}}'>
+                    数据刷新中...
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

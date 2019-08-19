@@ -1,0 +1,17 @@
+<view>
+    <view class="page__bd">
+        <view class="weui-demo-dialog {{showDialog ? 'weui-demo-dialog_show' : ''}}">
+            <view class="weui-mask" bindtap="closeDialog"></view>
+            <view class="weui-dialog__wrp" bindtap="closeDialog">
+                <view class="weui-dialog" catchtap="stopEvent">
+                    <view class="weui-dialog__hd">
+                        <view class="weui-dialog__title">{{title}}</view>
+                    </view>
+                    <slot name="content"></slot>
+                    <slot name="footer"></slot>
+
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

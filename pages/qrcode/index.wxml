@@ -1,0 +1,9 @@
+<view class="page">
+    <view class="page__hd">
+        <image class="img-qrcode" src="{{service.qr_code}}"></image>
+    </view>
+    <view class="page__bd">
+        <view>{{service.note}}</view>
+        <view>{{service.mobile}}</view>
+    </view>
+</view>

@@ -1,0 +1,111 @@
+page{
+  background-color: #eee;
+}
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.logo {
+  width: 166rpx;
+  height: 70rpx;
+}
+
+.input {
+  flex: 1;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  background-color: #eee;
+  border-radius: 40rpx;
+  padding-left: 14rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  margin-top: 10rpx;
+}
+
+.cloud {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10px;
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: center;
+}
+
+.cloud .img-cloud {
+  width: 50rpx;
+  height: 40rpx;
+}
+
+.cloud .txt {
+  margin-top: -10rpx;
+}
+.item{
+  background-color: #fff;
+  margin-bottom: 15rpx;
+}
+.item .content{
+  padding: 20rpx;
+}
+.img-short{
+  width: 750rpx;
+}
+.status,.info{
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.info{
+  color: #4e4e4e;
+}
+.status{
+  color:#ddd;
+}
+.list-item{
+  display: flex;
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 15rpx;
+}
+.list-item .left{
+  flex: 1;
+  width: 250rpx;
+  height: 180rpx;
+}
+.list-item .left .img-short1{
+  width: 250rpx;
+  height: 180rpx;
+}
+.list-item .right{
+  flex: 2;
+  padding-left: 15rpx;
+  position: relative;
+}
+.right-title{
+  color: #4e4e4e;
+  font-size: 30rpx;
+}
+.right .date{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color:#ddd;
+  font-size: 24rpx;
+}
+.scroll-view-container {
+  background-color: #fff;
+}
+
+/* ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+} */
+.data-loading {
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #eee;
+  text-align: center;
+  font-size: 14px;
+}

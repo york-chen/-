@@ -1,0 +1,21 @@
+page {
+    height: 1166rpx;
+    width: 710rpx;
+    padding: 20rpx;
+    background-color: #de2d2d;
+}
+
+.page {
+    width: 710rpx;
+    height: 1166rpx;
+    background-color: #fff;
+    text-align: center;
+}
+.img-qrcode{
+    width: 350rpx;
+    height: 350rpx;
+    margin-top: 200rpx;
+}
+.page__bd{
+    margin-top: 60rpx;
+}

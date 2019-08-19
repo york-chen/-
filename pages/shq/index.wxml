@@ -1,0 +1,43 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="section-title">服务超市</view>
+        <view class="section-content">
+            <view class="weui-grids">
+                <block>
+                    <view bindtap="jumpToService" wx:for="{{service}}" wx:key="id" data-item="{{item}}"
+                          class="weui-grid"
+                          hover-class="weui-grid_active">
+                        <image class="weui-grid__icon" src="{{item.icon}}"/>
+                        <view class="weui-grid__label">{{item.name}}</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="section-title">吃喝玩乐</view>
+        <view class="section-content">
+            <view class="news">
+                <view class="news-item" bindtap="viewDetail" data-id="{{news.id}}" wx:for="{{list}}" wx:key="id"
+                      wx:for-item="news">
+                    <view class="content">
+                        <view class="title">{{news.title}}</view>
+                        <view class="img-row" wx:if="{{news.image.length>1}}">
+                            <view class="img-wrap" wx:for="{{news.image}}" wx:for-item="newsImage" wx:key="*this">
+                                <image src="{{newsImage}}"></image>
+                            </view>
+                        </view>
+                        <view class="extra-info">
+                            <text wx:if="{{news.tag}}" class="tag">{{news.tag}}</text>
+                            <text class="date">{{news.date}}</text>
+                        </view>
+                    </view>
+                    <view class="img-wrap" wx:if="{{news.image.length<=1}}">
+                        <image wx:for="{{news.image}}" wx:for-item="newsImage" wx:key="*this"
+                               src="{{newsImage}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

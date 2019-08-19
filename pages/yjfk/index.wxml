@@ -1,0 +1,47 @@
+<view class="page">
+    <view bindtap="navigationtoMy" class="btn-my">我的反馈</view>
+    <view class="page__hd">
+        <view>
+            为持续提升服务品质，成中集团设立专职人员负责客户服务，受理各类投诉与建议、监督各小区客户服务质量，为客户优质服务。
+        </view>
+        <view>
+            您如果对我们的服务不满意，或者有好的建议，请您填写以下表单，我们的客服专员将与您联系，为您提供反馈信息并协商解决方案
+        </view>
+    </view>
+    <view class="page__bd">
+        <form bindsubmit="formSubmit">
+            <view><input class="cy-input" maxlength="30" name="title" placeholder="请输入标题，30字以内"/></view>
+            <view bindtap="openComplaintsType" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">投诉类型</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{complaints.name||'请选择'}}</view>
+            </view>
+            <view bindtap="openBelongField" class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">所属领域</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">{{field.name||'请选择'}}</view>
+            </view>
+            <view><input class="cy-input" name="name" placeholder="请输入姓名"/></view>
+            <view><input class="cy-input" type="number" maxlength="11" name="contact"
+                         placeholder="请输入联系电话"/></view>
+            <radio-group name="sex" class="radio-group" bindchange="radioChange">
+                <label class="radio">
+                    <radio color="#de2d2d" value="0"/>
+                    男
+                </label>
+                <label class="radio">
+                    <radio color="#de2d2d" value="1"/>
+                    女
+                </label>
+            </radio-group>
+            <textarea name="content" class="cy-textarea" bindblur="bindTextAreaBlur"
+                      placeholder="请输入您所投诉事件的详细情况，以便我们处理"/>
+            <view class="camera-wrap">
+                <image class="img-camera" src="{{item}}" wx:key="index" wx:for="{{tempImgs}}"></image>
+                <image bindtap="openChooseImgs" class="img-camera" src="../../assets/images/camera.png"></image>
+            </view>
+            <textarea name="expect" class="cy-textarea" bindblur="bindTextAreaBlur" placeholder="请输入您的诉求，期待的处理结果"/>
+            <view class="btn-area">
+                <button class="btn-submit" form-type="submit">提交</button>
+            </view>
+        </form>
+    </view>
+</view>

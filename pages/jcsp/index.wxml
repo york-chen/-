@@ -1,0 +1,92 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="searchbar">
+            <image class="logo" src="../../assets/images/logo.png"></image>
+            <input bindfocus="jumpToSearch" name="search" class="input" type="text"
+                   placeholder="请输入你想要的搜索内容"></input>
+            <view class="cloud">
+                <view>
+                    <image class="img-cloud"
+                           src="{{weather.icon}}"></image>
+                </view>
+                <view class="txt">
+                    <text>{{weather.condition}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="tabs">
+            <view id="{{item.value}}" bindtap="tabClick" wx:for="{{tabs}}" wx:key="*this"
+                  class="tab {{activeTab ==item.value?'active':''}}">
+                {{item.text}}
+            </view>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="tabs-panel">
+            <view wx:if="{{activeTab==1}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'
+                             bindscrolltolower='loadMoreLive'
+                             bindscrolltoupper='refreshLive'
+                             lower-threshold='0' upper-threshold='0' scroll-top="30">
+                    <view class='data-loading' hidden='{{livePage.hideRefresh}}'>
+                        数据刷新中...
+                    </view>
+                    <view class="item" bindtap="jumpToLivePage" data-link="{{liveData.top.link}}">
+                        <image class="img-short" src="{{liveData.top.cover}}"></image>
+                        <view class="content">
+                            <view class="title">{{liveData.top.title}}</view>
+                            <view class="info">
+                                {{liveData.top.desc}}
+                            </view>
+                            <view class="status">{{liveData.top.create_time}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="jumpToLivePage" data-link="{{item.link}}" class="list-item"
+                          wx:for="{{liveData.list}}"
+                          wx:key="id">
+                        <view class="left">
+                            <image class="img-short1" src="{{item.cover}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="right-title">{{item.title}}</view>
+                            <view class="date">{{item.create_time}}</view>
+                        </view>
+                    </view>
+                    <view class='data-loading' hidden='{{livePage.hideLoadMore}}'>
+                        数据刷新中...
+                    </view>
+                </scroll-view>
+            </view>
+            <view wx:if="{{activeTab==2}}" class="tab-content">
+                <scroll-view style="height: {{scrollHeight + 'px'}}" class='scroll-view-container' scroll-y='{{true}}'
+                             bindscrolltolower='loadMoreRecord'
+                             bindscrolltoupper='refreshRecord'
+                             lower-threshold='0' upper-threshold='0' scroll-top="30">
+                    <view class='data-loading' hidden='{{recordPage.hideRefresh}}'>
+                        数据刷新中...
+                    </view>
+                    <view class="item" bindtap="jumpToDetail" data-item="{{recordData.top}}">
+                        <image class="img-short" src="{{recordData.top.cover}}"></image>
+                        <view class="content">
+                            <view class="title">{{recordData.top.title}}</view>
+                            <view class="info">{{recordData.top.create_time}}</view>
+                        </view>
+                    </view>
+                    <view bindtap="jumpToDetail" class="list-item" data-item="{{item}}" wx:for="{{recordData.list}}"
+                          wx:key="id">
+                        <view class="left">
+                            <image class="img-short1" src="{{item.cover}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="right-title">{{item.title}}</view>
+                            <view class="date">{{item.create_time}}</view>
+                        </view>
+                    </view>
+                    <view class='data-loading' hidden='{{recordPage.hideLoadMore}}'>
+                        数据刷新中...
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</view>
